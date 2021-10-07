@@ -49,7 +49,7 @@ if __name__ == '__main__':
     df_train = pca.transform(X_train)
     df_test = pca.transform(X_test)
 
-    logistic.fit(df_train, df_test)
+    logistic.fit(df_train, Y_train)
 
     #Calculando la efectividad del modelo con PCA
     print('Score PCA: {}'.format(logistic.score(df_test, Y_test)))
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     df_train_ipca = ipca.transform(X_train)
     df_test_ipca = ipca.transform(X_test)
 
-    logistic_ipca.fit(df_train, df_test)
+    logistic_ipca.fit(df_train, Y_train)
 
     #Calculando la efectividad del modelo con IPCA
     print('Score IPCA: {}'.format(logistic_ipca.score(df_test, Y_test)))
